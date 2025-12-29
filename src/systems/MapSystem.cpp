@@ -1078,9 +1078,14 @@ void MapSystem::createForegroundEntities(World* world, int coordinateX, int coor
 
          trampolineBottom->remove<TileComponent>();
 
+         int ids1[3] = {entityID, entityID + 1, entityID + 2};
+         int ids2[3] = {entityID + 48, entityID + 1 + 48, entityID + 2 + 48};
+
          trampolineTop->addComponent<TrampolineComponent>(
-             trampolineBottom, (int[3]){entityID, entityID + 1, entityID + 2},
-             (int[3]){entityID + 48, entityID + 1 + 48, entityID + 2 + 48});
+             trampolineBottom,
+             ids1,
+             ids2
+         );
       } break;
       /* ****************************************************************** */
       case 392: {  // BRIDGE
